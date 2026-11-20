@@ -11,6 +11,10 @@
     themeIcon.textContent = dark ? '☀' : '☾';
     toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
     metaTheme.setAttribute('content', dark ? '#202b28' : '#f7f5ed');
+    const heroArt = document.querySelector('.hero-landscape');
+    const contactArt = document.querySelector('.contact-landscape');
+    if (heroArt) heroArt.src = dark ? 'assets/hero-night.svg' : 'assets/hero-landscape.svg';
+    if (contactArt) contactArt.src = dark ? 'assets/hero-landscape.svg' : 'assets/hero-night.svg';
     try { localStorage.setItem('harish-theme', theme); } catch {}
   }
   applyTheme(stored || (prefersDark ? 'dark' : 'light'));
